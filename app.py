@@ -6,7 +6,6 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 from flask import Flask, jsonify
 
-
 ## Database Setup ##
 engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
@@ -37,12 +36,7 @@ app = Flask(__name__)
 def home():
     print("Server received request for 'Home' page...")
 #    """List all available api routes."""
-    return (
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/stations<br/>"
-        f"/api/v1.0/<start>"
-        f"/api/v1.0/<start>/<end>"
+    return ("/api/v1.0/precipitation<br/>\n/api/v1.0/tobs<br/>\n/api/v1.0/stations<br/>\n/api/v1.0/<start>\n/api/v1.0/<start>/<end>"
     )
 
 
@@ -86,6 +80,6 @@ def stations():
 
     return jsonify(stations)
 
-
+#THIS LINE MUST BE AT BOTTOM - EXACTLY
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="127.0.0.1", port = 80,debug=True)
