@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<title>USA Mortality Visualization</title>
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/main.min.css?19d58df6" type="text/css"><!--
+    <link rel="stylesheet" href="/static/css/arwa.min.css?9f7be596" type="text/css">-->
+    <meta name="description" content="Infinome is a citizen science experiment to help people lose weight, feel better, and live longer.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="fb:app_id" content="490077614426376">
+<meta property="og:image" content="https://www.infino.me/static/img/screenshots/wonder.png"/>
+<meta property="og:url" content="https://www.infino.me/mortality/usmap"/>
+<meta property="og:image:width" content="1600"/>
+<meta property="og:image:height" content="1200"/>
+<meta property="og:title" content="Visualization of USA Deaths by State"/>
+<meta name="description" content="USA mortality data provided by the CDC"/>
+<meta name="twitter:card" content="photo"/>
+<meta name="twitter:title" content="Top causes of death"/>
+<meta name="twitter:site" content="@InfinoMe"/>
+<meta name="twitter:url" content="https://www.infino.me/mortality/usmap"/>
+<meta name="twitter:image" content="https://www.infino.me/static/img/screenshots/wonder-twitter4.png"/><!--
+    <script>window.smartlook||(function(d) {
+var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+c.charset='utf-8';c.src='//rec.getsmartlook.com/recorder.js';h.appendChild(c);
+})(document);
+smartlook('init', '5e92e2e9628cb69ee676744a608389a3860d0ceb');
+    </script>-->
+
+    <!--script(src="https://cdn.optimizely.com/js/6452186348.js")-->
+    <!-- google analytics-->
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-48426511-1', 'infino.me');
+ga('send', 'pageview');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 791338680-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-791338680"></script>
+    <script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-791338680');
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="top_wrapper">
+<header style="box-shadow: 0px 0px 10px rgb(102, 102, 102);" class="top-header">
+  <div class="container">
+    <div class="row header">
+      <div class="col-md-1 col-sm-4 col-xs-4">
+        <center>
+          <div>
+<svg
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:cc="http://creativecommons.org/ns#"
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns:svg="http://www.w3.org/2000/svg"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+version="1.1"
+width="103"
+height="64"
+id="img"
+xml:base="#img"
+inkscape:version="0.48.4 r9939"
+sodipodi:docname="dna-guides.svg"
+style="opacity:0;"
+>
+<sodipodi:namedview
+	pagecolor="#ffffff"
+	bordercolor="#666666"
+	borderopacity="1"
+	objecttolerance="10"
+	gridtolerance="10"
+	guidetolerance="10"
+	inkscape:pageopacity="0"
+	inkscape:pageshadow="2"
+	inkscape:window-width="924"
+	inkscape:window-height="561"
+	id="namedview18"
+	showgrid="false"
+	inkscape:zoom="5.6699029"
+	inkscape:cx="53.057583"
+	inkscape:cy="30.525077"
+	inkscape:window-x="436"
+	inkscape:window-y="146"
+	inkscape:window-maximized="0"
+	inkscape:current-layer="layer2" />
+<defs
+	id="defs3554">
+	<linearGradient
+	id="linearGradient3845">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849" />
+	</linearGradient>
+	<linearGradient
+	id="linearGradient3831">
+	<stop
+		style="stop-color:#00dee2;stop-opacity:1;"
+		offset="0"
+		id="stop3833" />
+	<stop
+		style="stop-color:#00aaad;stop-opacity:1;"
+		offset="1"
+		id="stop3835" />
+	</linearGradient>
+	<filter
+	inkscape:collect="always"
+	id="filter3895">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3897" />
+	</filter>
+	<filter
+	inkscape:collect="always"
+	id="filter3899">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3901" />
+	</filter>
+	<filter
+	inkscape:collect="always"
+	id="filter3903">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3905" />
+	</filter>
+	<radialGradient
+	inkscape:collect="always"
+	xlink:href="#linearGradient3831"
+	id="radialGradient3837"
+	cx="51.746723"
+	cy="25.498726"
+	fx="51.746723"
+	fy="25.498726"
+	r="44.180222"
+	gradientTransform="matrix(1,0,0,0.54804387,0,11.524306)"
+	gradientUnits="userSpaceOnUse" />
+	<linearGradient
+	inkscape:collect="always"
+	xlink:href="#linearGradient3845"
+	id="linearGradient3851"
+	x1="84.231163"
+	y1="37.544521"
+	x2="82.614731"
+	y2="10.912671"
+	gradientUnits="userSpaceOnUse" />
+	<filter
+	inkscape:collect="always"
+	id="filter3853">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855" />
+	</filter>
+	<linearGradient
+	inkscape:collect="always"
+	xlink:href="#linearGradient3845-9"
+	id="linearGradient3851-0"
+	x1="84.231163"
+	y1="37.544521"
+	x2="82.614731"
+	y2="10.912671"
+	gradientUnits="userSpaceOnUse" />
+	<linearGradient
+	id="linearGradient3845-9">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847-8" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849-5" />
+	</linearGradient>
+	<filter
+	color-interpolation-filters="sRGB"
+	inkscape:collect="always"
+	id="filter3853-1">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855-8" />
+	</filter>
+	<linearGradient
+	gradientTransform="translate(-9.3476028,-0.35273996)"
+	y2="10.912671"
+	x2="82.614731"
+	y1="37.544521"
+	x1="84.231163"
+	gradientUnits="userSpaceOnUse"
+	id="linearGradient3874"
+	xlink:href="#linearGradient3845-9"
+	inkscape:collect="always" />
+	<linearGradient
+	inkscape:collect="always"
+	xlink:href="#linearGradient3845-6"
+	id="linearGradient3851-1"
+	x1="84.231163"
+	y1="37.544521"
+	x2="82.614731"
+	y2="10.912671"
+	gradientUnits="userSpaceOnUse" />
+	<linearGradient
+	id="linearGradient3845-6">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847-2" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849-0" />
+	</linearGradient>
+	<filter
+	color-interpolation-filters="sRGB"
+	inkscape:collect="always"
+	id="filter3853-9">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855-5" />
+	</filter>
+	<linearGradient
+	gradientTransform="translate(-19.224315,-4.232877)"
+	y2="10.912671"
+	x2="82.614731"
+	y1="37.544521"
+	x1="84.231163"
+	gradientUnits="userSpaceOnUse"
+	id="linearGradient3874-2"
+	xlink:href="#linearGradient3845-6"
+	inkscape:collect="always" />
+	<linearGradient
+	gradientTransform="translate(-34.965326,15.211901)"
+	y2="10.912671"
+	x2="82.614731"
+	y1="37.544521"
+	x1="84.231163"
+	gradientUnits="userSpaceOnUse"
+	id="linearGradient3874-2-1"
+	xlink:href="#linearGradient3845-6-7"
+	inkscape:collect="always" />
+	<linearGradient
+	id="linearGradient3845-6-7">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847-2-6" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849-0-1" />
+	</linearGradient>
+	<filter
+	color-interpolation-filters="sRGB"
+	inkscape:collect="always"
+	id="filter3853-9-7">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855-5-4" />
+	</filter>
+	<linearGradient
+	gradientTransform="translate(-25.088614,19.092038)"
+	y2="10.912671"
+	x2="82.614731"
+	y1="37.544521"
+	x1="84.231163"
+	gradientUnits="userSpaceOnUse"
+	id="linearGradient3874-5"
+	xlink:href="#linearGradient3845-9-6"
+	inkscape:collect="always" />
+	<linearGradient
+	id="linearGradient3845-9-6">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847-8-5" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849-5-8" />
+	</linearGradient>
+	<filter
+	color-interpolation-filters="sRGB"
+	inkscape:collect="always"
+	id="filter3853-1-5">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855-8-5" />
+	</filter>
+	<linearGradient
+	inkscape:collect="always"
+	xlink:href="#linearGradient3845-1"
+	id="linearGradient3851-3"
+	x1="84.231163"
+	y1="37.544521"
+	x2="82.614731"
+	y2="10.912671"
+	gradientUnits="userSpaceOnUse" />
+	<linearGradient
+	id="linearGradient3845-1">
+	<stop
+		style="stop-color:#f15a22;stop-opacity:1;"
+		offset="0"
+		id="stop3847-5" />
+	<stop
+		style="stop-color:#ffc608;stop-opacity:1;"
+		offset="1"
+		id="stop3849-4" />
+	</linearGradient>
+	<filter
+	color-interpolation-filters="sRGB"
+	inkscape:collect="always"
+	id="filter3853-2">
+	<feGaussianBlur
+		inkscape:collect="always"
+		stdDeviation="0.0"
+		id="feGaussianBlur3855-6" />
+	</filter>
+	<linearGradient
+	gradientTransform="translate(-15.741011,19.444778)"
+	y2="10.912671"
+	x2="82.614731"
+	y1="37.544521"
+	x1="84.231163"
+	gradientUnits="userSpaceOnUse"
+	id="linearGradient3949"
+	xlink:href="#linearGradient3845-1"
+	inkscape:collect="always" />
+</defs>
+<metadata
+	id="metadata3557">
+	<rdf:RDF>
+	<cc:Work
+		rdf:about="">
+		<dc:format>image/svg+xml</dc:format>
+		<dc:type
+		rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+		<dc:title></dc:title>
+		<dc:identifier />
+	</cc:Work>
+	</rdf:RDF>
+</metadata>
+<g
+	inkscape:groupmode="layer"
+	id="layer2"
+	inkscape:label="logo"
+	style="display:inline">
+	<path
+		d="m 46.723808,25.482689 c 0,0 -11.965307,-17.4307448 -21.412681,-17.3638971 C 8.5656842,8.2372792 7.7953027,22.685503 7.7617177,25.284383 7.7281327,27.883273 1.3754172,29.42441 1.0920472,25.420639 0.80868715,21.416809 2.2120901,1.7901838 25.311147,1.3840839 41.431037,1.1006834 51.398828,19.930579 51.398828,19.930579 z"
+		id="bbUL"
+		style="fill:#00aaad;fill-opacity:1;stroke:none;display:inline;filter:url(#filter3903)"
+		inkscape:connector-curvature="0"
+		sodipodi:nodetypes="csssscc"
+		transform="matrix(0.94062497,0,0,0.94062497,3.1873198,0.46975453)">
+		<animate  dur="1s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="fadeIn.end" 
+			fill="freeze" 
+			values="
+			m 46.723808,25.482689 c 0,0 -11.965307,-17.4307448 -21.412681,-17.3638971 C 8.5656842,8.2372792 7.7953027,22.685503 7.7617177,25.284383 7.7281327,27.883273 1.3754172,29.42441 1.0920472,25.420639 0.80868715,21.416809 2.2120901,1.7901838 25.311147,1.3840839 41.431037,1.1006834 51.398828,19.930579 51.398828,19.930579 z;
+			m 45.276752,23.734963 c 0,0 -10.518015,-15.6161711 -19.965625,-15.6161711 -3.221842,0 -7.123037,-0.4025694 -11.317936,1.6532002 C 8.8716763,12.281863 6.6024599,14.097927 9.3122885,8.7149873 11.613941,4.142869 17.724481,1.6575993 25.311147,1.3840839 41.423061,0.80321532 49.951772,18.182853 49.951772,18.182853 z;"
+		/>
+		<animate  dur="2s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="trigger.begin" 
+			fill="freeze" 
+			values="
+			m 45.276752,23.734963 c 0,0 -10.518015,-15.6161711 -19.965625,-15.6161711 -3.221842,0 -7.123037,-0.4025694 -11.317936,1.6532002 C 8.8716763,12.281863 6.6024599,14.097927 9.3122885,8.7149873 11.613941,4.142869 17.724481,1.6575993 25.311147,1.3840839 41.423061,0.80321532 49.951772,18.182853 49.951772,18.182853 z;
+			m 46.723808,25.482689 c 0,0 -11.965307,-17.4307448 -21.412681,-17.3638971 C 8.5656842,8.2372792 7.7953027,22.685503 7.7617177,25.284383 7.7281327,27.883273 1.3754172,29.42441 1.0920472,25.420639 0.80868715,21.416809 2.2120901,1.7901838 25.311147,1.3840839 41.431037,1.1006834 51.398828,19.930579 51.398828,19.930579 z;
+			m 46.723808,25.482689 c 0,0 -11.965307,-17.4307448 -21.412681,-17.3638971 C 8.5656842,8.2372792 7.7953027,22.685503 7.7617177,25.284383 7.7281327,27.883273 1.3754172,29.42441 1.0920472,25.420639 0.80868715,21.416809 2.2120901,1.7901838 25.311147,1.3840839 41.431037,1.1006834 51.398828,19.930579 51.398828,19.930579 z;
+			m 46.723808,25.482689 c 0,0 -11.965307,-17.4307448 -21.412681,-17.3638971 C 8.5656842,8.2372792 7.7953027,22.685503 7.7617177,25.284383 7.7281327,27.883273 1.3754172,29.42441 1.0920472,25.420639 0.80868715,21.416809 2.2120901,1.7901838 25.311147,1.3840839 41.431037,1.1006834 51.398828,19.930579 51.398828,19.930579 z;
+			m 45.276752,23.734963 c 0,0 -10.518015,-15.6161711 -19.965625,-15.6161711 -3.221842,0 -7.123037,-0.4025694 -11.317936,1.6532002 C 8.8716763,12.281863 6.6024599,14.097927 9.3122885,8.7149873 11.613941,4.142869 17.724481,1.6575993 25.311147,1.3840839 41.423061,0.80321532 49.951772,18.182853 49.951772,18.182853 z;"
+		/>
+	</path>
+	<path
+		d="m 23.274618,49.287755 c 15.6012,0.216850 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.790428,-20.3343829 25.627247,-19.9076429 15.370809,0.510978 15.469473,13.6929829 15.628663,16.8908629 0.15919,3.19788 6.493287,5.436063 6.741507,0.06481 C 102.27368,20.041534 100.34362,1.9552186 79.806968,1.7061786 64.224718,1.5172086 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 10.027338,41.975091 7.5434596,29.335857 7.7665596,25.340977 c 0.2231,-3.99487 -6.703031,-8.255298 -6.649016,0.08301 0.054015,8.33831 5.8737536,23.637435 22.1570744,23.863765 z"
+		id="bbCenter"
+		style="fill:url(#radialGradient3837);fill-opacity:1;stroke:none;display:inline;filter:url(#filter3899)"
+		inkscape:connector-curvature="0"
+		sodipodi:nodetypes="sssssssssss"
+		transform="matrix(0.94062497,0,0,0.94062497,3.1873198,0.46975453)">
+		<animate  dur="2s" 
+			id="trigger"
+			restart="whenNotActive" 
+			repeatCount="1" 
+			begin="img.click" 
+			attributeName="fill-opacity" 
+			from="1"
+			to="1"
+		/>
+		<animate  dur="1.5s" 
+			id="reverse" 
+			restart="whenNotActive" 
+			repeatCount="1" 
+			begin="trigger.begin" 
+			attributeName="fill-opacity" 
+			from="1"
+			to="1"
+		/>
+		<animate dur="1s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="fadeIn.end" 
+			fill="freeze" 
+			values="
+			m 23.274618,49.287755 c 15.6012,0.216850 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.790428,-20.3343829 25.627247,-19.9076429 15.370809,0.510978 15.469473,13.6929829 15.628663,16.8908629 0.15919,3.19788 6.493287,5.436063 6.741507,0.06481 C 102.27368,20.041534 100.34362,1.9552186 79.806968,1.7061786 64.224718,1.5172086 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 10.027338,41.975091 7.5434596,29.335857 7.7665596,25.340977 c 0.2231,-3.99487 -6.703031,-8.255298 -6.649016,0.08301 0.054015,8.33831 5.8737536,23.637435 22.1570744,23.863765 z;
+			m 23.274618,49.287755 c 15.6012,0.216852 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.784158,-19.7623626 25.627247,-19.9076429 2.382184,-0.026947 6.779069,-0.3928336 9.927528,1.113303 6.571263,3.1435129 7.035674,3.4141889 4.48757,-0.067775 C 89.677993,3.5005544 83.119606,1.7061786 79.806968,1.7061786 64.223572,1.7061786 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 20.369232,42.364887 17.114707,42.368109 13.600279,40.455614 9.1829204,38.051759 5.9766244,34.558374 9.4703695,42.129639 11.910906,47.418504 19.847671,49.240122 23.274618,49.287755 z;"
+		/>
+		<animate dur="2s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="trigger.begin" 
+			fill="freeze" 
+			values="
+			m 23.274618,49.287755 c 15.6012,0.216852 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.784158,-19.7623626 25.627247,-19.9076429 2.382184,-0.026947 6.779069,-0.3928336 9.927528,1.113303 6.571263,3.1435129 7.035674,3.4141889 4.48757,-0.067775 C 89.677993,3.5005544 83.119606,1.7061786 79.806968,1.7061786 64.223572,1.7061786 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 20.369232,42.364887 17.114707,42.368109 13.600279,40.455614 9.1829204,38.051759 5.9766244,34.558374 9.4703695,42.129639 11.910906,47.418504 19.847671,49.240122 23.274618,49.287755 z;
+			m 23.274618,49.287755 c 15.6012,0.216850 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.790428,-20.3343829 25.627247,-19.9076429 15.370809,0.510978 15.469473,13.6929829 15.628663,16.8908629 0.15919,3.19788 6.493287,5.436063 6.741507,0.06481 C 102.27368,20.041534 100.34362,1.9552186 79.806968,1.7061786 64.224718,1.5172086 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 10.027338,41.975091 7.5434596,29.335857 7.7665596,25.340977 c 0.2231,-3.99487 -6.703031,-8.255298 -6.649016,0.08301 0.054015,8.33831 5.8737536,23.637435 22.1570744,23.863765 z;
+			m 23.274618,49.287755 c 15.6012,0.216850 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.790428,-20.3343829 25.627247,-19.9076429 15.370809,0.510978 15.469473,13.6929829 15.628663,16.8908629 0.15919,3.19788 6.493287,5.436063 6.741507,0.06481 C 102.27368,20.041534 100.34362,1.9552186 79.806968,1.7061786 64.224718,1.5172086 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 10.027338,41.975091 7.5434596,29.335857 7.7665596,25.340977 c 0.2231,-3.99487 -6.703031,-8.255298 -6.649016,0.08301 0.054015,8.33831 5.8737536,23.637435 22.1570744,23.863765 z;
+			m 23.274618,49.287755 c 15.6012,0.216850 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.790428,-20.3343829 25.627247,-19.9076429 15.370809,0.510978 15.469473,13.6929829 15.628663,16.8908629 0.15919,3.19788 6.493287,5.436063 6.741507,0.06481 C 102.27368,20.041534 100.34362,1.9552186 79.806968,1.7061786 64.224718,1.5172086 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 10.027338,41.975091 7.5434596,29.335857 7.7665596,25.340977 c 0.2231,-3.99487 -6.703031,-8.255298 -6.649016,0.08301 0.054015,8.33831 5.8737536,23.637435 22.1570744,23.863765 z;
+			m 23.274618,49.287755 c 15.6012,0.216852 22.470463,-9.620497 30.753425,-20.922913 8.3388,-11.37861 12.784158,-19.7623626 25.627247,-19.9076429 2.382184,-0.026947 6.779069,-0.3928336 9.927528,1.113303 6.571263,3.1435129 7.035674,3.4141889 4.48757,-0.067775 C 89.677993,3.5005544 83.119606,1.7061786 79.806968,1.7061786 64.223572,1.7061786 58.877185,9.5232997 48.902995,22.02058 38.928805,34.517871 35.75554,42.944813 23.22489,42.47252 20.369232,42.364887 17.114707,42.368109 13.600279,40.455614 9.1829204,38.051759 5.9766244,34.558374 9.4703695,42.129639 11.910906,47.418504 19.847671,49.240122 23.274618,49.287755 z;"
+		/>
+	</path>
+	<path
+	d="m 55.807808,25.339139 c 0,0 10.656746,17.507476 20.837285,17.128796 17.066687,-0.634821 18.602411,-14.546046 18.635991,-17.144916 0.0336,-2.59889 6.439986,-4.02371 6.723366,-0.0199 0.28336,4.00381 -2.676277,24.206471 -25.359357,23.949326 C 61.699363,49.083014 51.268798,31.07006 51.268798,31.07006 z"
+	id="bbLR"
+	style="fill:#00aaad;fill-opacity:1;stroke:none;display:inline;filter:url(#filter3895)"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="csssscc"
+	transform="matrix(0.94062497,0,0,0.94062497,3.1873198,0.46975453)">
+		<animate  dur="1s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="fadeIn.end" 
+			fill="freeze" 
+			values="
+			m 55.807808,25.339139 c 0,0 10.656746,17.507476 20.837285,17.128796 17.066687,-0.634821 18.602411,-14.546046 18.635991,-17.144916 0.0336,-2.59889 6.439986,-4.02371 6.723366,-0.0199 0.28336,4.00381 -2.676277,24.206471 -25.359357,23.949326 C 61.699363,49.083014 51.268798,31.07006 51.268798,31.07006 z;
+			m 57.130322,27.059407 c 0,0 9.331597,15.708083 19.514771,15.408528 6.339084,-0.186475 10.001603,0.376094 14.393286,-2.295448 6.094474,-3.707381 4.432882,-2.203537 2.74583,1.43853 -2.898669,6.257747 -11.285662,7.641428 -17.139116,7.641428 -14.94669,0 -24.053781,-16.462117 -24.053781,-16.462117 z;"
+		/>
+		<animate  dur="2s" 
+			repeatCount="1" 
+			attributeName="d" 
+			begin="trigger.begin" 
+			fill="freeze" 
+			values="
+			m 57.130322,27.059407 c 0,0 9.331597,15.708083 19.514771,15.408528 6.339084,-0.186475 10.001603,0.376094 14.393286,-2.295448 6.094474,-3.707381 4.432882,-2.203537 2.74583,1.43853 -2.898669,6.257747 -11.285662,7.641428 -17.139116,7.641428 -14.94669,0 -24.053781,-16.462117 -24.053781,-16.462117 z;
+			m 55.807808,25.339139 c 0,0 10.656746,17.507476 20.837285,17.128796 17.066687,-0.634821 18.602411,-14.546046 18.635991,-17.144916 0.0336,-2.59889 6.439986,-4.02371 6.723366,-0.0199 0.28336,4.00381 -2.676277,24.206471 -25.359357,23.949326 C 61.699363,49.083014 51.268798,31.07006 51.268798,31.07006 z;
+			m 55.807808,25.339139 c 0,0 10.656746,17.507476 20.837285,17.128796 17.066687,-0.634821 18.602411,-14.546046 18.635991,-17.144916 0.0336,-2.59889 6.439986,-4.02371 6.723366,-0.0199 0.28336,4.00381 -2.676277,24.206471 -25.359357,23.949326 C 61.699363,49.083014 51.268798,31.07006 51.268798,31.07006 z;
+			m 55.807808,25.339139 c 0,0 10.656746,17.507476 20.837285,17.128796 17.066687,-0.634821 18.602411,-14.546046 18.635991,-17.144916 0.0336,-2.59889 6.439986,-4.02371 6.723366,-0.0199 0.28336,4.00381 -2.676277,24.206471 -25.359357,23.949326 C 61.699363,49.083014 51.268798,31.07006 51.268798,31.07006 z;
+			m 57.130322,27.059407 c 0,0 9.331597,15.708083 19.514771,15.408528 6.339084,-0.186475 10.001603,0.376094 14.393286,-2.295448 6.094474,-3.707381 4.432882,-2.203537 2.74583,1.43853 -2.898669,6.257747 -11.285662,7.641428 -17.139116,7.641428 -14.94669,0 -24.053781,-16.462117 -24.053781,-16.462117 z;"
+		/>
+	</path>
+	<text
+		x="18.670166"
+		y="62.774017"
+		id="text2992"
+		xml:space="preserve"
+		style="font-size:10.64608097px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans"
+		sodipodi:linespacing="125%">
+		<tspan
+			x="18.670166"
+			y="62.774017"
+			id="tspan2994"
+			style="font-size:16px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"><tspan style="fill:#602d91;fill-opacity:1;font-weight:500;-inkscape-font-specification:Ubuntu Medium" id="tspan3839">infino<animate  dur="0.5s" repeatCount="1" attributeName="fill-opacity" from="1" to="0" begin="trigger.begin" fill="freeze" /><animate  dur="0.5s" repeatCount="1" attributeName="fill-opacity" from="0" to="1" begin="reverse.end" fill="freeze" /></tspan><tspan style="fill:#f15a22;fill-opacity:1;font-weight:500;-inkscape-font-specification:Ubuntu Medium" id="tspan3841">me<animate  dur="0.5s" repeatCount="1" attributeName="fill-opacity" from="1" to="0" begin="trigger.begin" fill="freeze" /><animate  dur="0.5s" repeatCount="1" attributeName="fill-opacity" from="0" to="1" begin="reverse.end" fill="freeze" /></tspan>
+		</tspan>
+	</text>
+	<text
+	x="4.0788231"
+	y="62.774017"
+	id="text2992"
+	xml:space="preserve"
+	style="font-size:10.64608097px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:0;stroke:none;display:inline;font-family:Sans"
+	sodipodi:linespacing="125%"><tspan
+		x="4.0788231"
+		y="62.774017"
+		id="tspan2994"
+		style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu">life unlimited</tspan>
+		<animate  dur="0.5s" 
+			repeatCount="1" 
+			attributeName="fill-opacity" 
+			from="0"
+			to="1"
+			begin="trigger.begin" 
+			fill="freeze" 
+		/>
+		<animate  dur="0.5s" 
+			repeatCount="1" 
+			attributeName="fill-opacity" 
+			from="1"
+			to="0"
+			begin="reverse.end" 
+			fill="freeze" 
+		/>
+	</text>
+	<path
+	style="fill:url(#linearGradient3851);opacity:0;stroke:none;filter:url(#filter3853)"
+	d="M 85.539384,10.736302 87.744007,37.19178 85.451199,38.07363 79.983734,9.9426369 z"
+	id="path3843"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc"
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+	<path
+	style="fill:url(#linearGradient3874);opacity:0;stroke:none;display:inline;filter:url(#filter3853-1)"
+	d="m 75.927225,10.030822 4.497433,28.924657 -3.880138,0 -6.437499,-27.160959 z"
+	id="path3843-7"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc" 
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+	<path
+	style="fill:url(#linearGradient3874-2);opacity:0;stroke:none;display:inline;filter:url(#filter3853-9)"
+	d="M 66.226883,15.321917 70.63613,37.279967 67.637843,35.251714 62.611302,19.907533 z"
+	id="path3843-3"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc" 
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+	<path
+	style="fill:url(#linearGradient3949);opacity:0;stroke:none;display:inline;filter:url(#filter3853-2)"
+	d="m 69.798373,30.18108 2.204623,26.455478 -2.292808,0.88185 -5.467465,-28.130993 z"
+	id="path3843-4"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc"
+	transform="matrix(-1,0,0,-1,87.479454,68.210617)" 
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+	<path
+	style="fill:url(#linearGradient3874-5);opacity:0;stroke:none;display:inline;filter:url(#filter3853-1-5)"
+	d="m 60.186214,29.4756 4.497433,28.924657 -3.880138,0 -6.437499,-27.160959 z"
+	id="path3843-7-9"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc"
+	transform="matrix(-1,0,0,-1,87.479454,68.210617)" 
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+	<path
+	style="fill:url(#linearGradient3874-2-1);opacity:0;stroke:none;display:inline;filter:url(#filter3853-9-7)"
+	d="m 50.485872,34.766695 4.409247,21.95805 -2.998287,-2.028253 -5.026541,-15.344181 z"
+	id="path3843-3-7"
+	inkscape:connector-curvature="0"
+	sodipodi:nodetypes="ccccc"
+	transform="matrix(-1,0,0,-1,87.479454,68.210617)" 
+	>
+	<animate  dur="1s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0" 
+		to="1" 
+		begin="fadeIn.end" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="1"
+		to="0"
+		begin="trigger.begin" 
+		fill="freeze" 
+	/>
+	<animate  dur="0.5s" 
+		repeatCount="1" 
+		attributeName="opacity" 
+		from="0"
+		to="1"
+		begin="reverse.end" 
+		fill="freeze" 
+	/>
+	</path>
+</g>
+<animate  dur="0.7s" 
+	id="fadeIn"
+	repeatCount="1" 
+	attributeName="opacity" 
+	from="0"
+	to="1"
+	begin="0.5s" 
+	fill="freeze" 
+/>
+</svg>
+          </div>
+        </center>
+      </div>
+      <div class="col-md-10">
+        <nav>
+          <ul class="navigation">
+            <li><a href="/welcome">Welcome</a>
+            </li>
+            <li><a href="/project">About The Project</a><!--
+              <button id="projectMenu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="margin-top:20px;" class="btn dropdown-toggle"><b>The Project</b>
+              </button>-->
+              <ul aria-labelledby="projectMenu" style="margin-top:20px;" class="dropdown-menu">
+                <li><a href="/health">Health Stats</a>
+                </li>
+                <li><a href="/mortality/usmap">Mortality Data</a>
+                </li>
+                <li><a href="/science">The Science</a>
+                </li>
+                <li><a href="/movement">Our Study</a>
+                </li>
+              </ul><!--
+              <li><a href="/health">Your Health</a>
+              </li>
+              <li><a href="/science">Science</a>
+              </li>
+              <li><a href="/movement">The Movement</a>
+              </li>-->
+            </li>
+            <li><a href="/genetics">Genetics Report</a>
+            </li>
+            <li><a href="/fitness" class="fitness">Fitness Stats</a>
+            </li>
+            <li>
+              <!--a(href='/blog') Blog-->
+            </li>
+            <!--li-->
+          </ul>
+        </nav>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <!--script needed to set active link-->
+    </div>
+  </div>
+</header>
+      </div>
+      <!--addthis-->
+      <div style="left:0px;top:200px;" class="addthis_toolbox addthis_floating_style addthis_32x32_style"><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_google_plusone_share"></a><a class="addthis_button_linkedin"></a><a class="addthis_button_compact"></a>
+      </div>
+      <!--script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-52c2448226b1832a')--><!--
+      <script>var _rollbarConfig = {
+	accessToken: "c9eae3d304ff4762920e74ba8a4bf17d",
+	captureUncaught: true,
+	payload: {
+		environment: "test"
+	}
+};
+!function(r){function o(e){if(t[e])return t[e].exports;var n=t[e]={exports:{},id:e,loaded:!1};return r[e].call(n.exports,n,n.exports,o),n.loaded=!0,n.exports}var t={};return o.m=r,o.c=t,o.p="",o(0)}([function(r,o,t){"use strict";var e=t(1).Rollbar,n=t(2),i="https://d37gvrvc0wt4s1.cloudfront.net/js/v1.7/rollbar.min.js";_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||i;var a=e.init(window,_rollbarConfig),l=n(a,_rollbarConfig);a.loadFull(window,document,!1,_rollbarConfig,l)},function(r,o,t){"use strict";function e(r){this.shimId=++s,this.notifier=null,this.parentShim=r,this.logger=function(){},window.console&&void 0===window.console.shimId&&(this.logger=window.console.log)}function n(r,o,t){window._rollbarWrappedError&&(t[4]||(t[4]=window._rollbarWrappedError),t[5]||(t[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,t),o&&o.apply(window,t)}function i(r){var o=e;return l(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var t=this,e="scope"===r;e&&(t=new o(this));var n=Array.prototype.slice.call(arguments,0),i={shim:t,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(i),e?t:void 0})}function a(r,o){if(o.hasOwnProperty&&o.hasOwnProperty("addEventListener")){var t=o.addEventListener;o.addEventListener=function(o,e,n){t.call(this,o,r.wrap(e),n)};var e=o.removeEventListener;o.removeEventListener=function(r,o,t){e.call(this,r,o&&o._wrapped?o._wrapped:o,t)}}}function l(r,o){return o=o||window.console.log||function(){},function(){try{return r.apply(this,arguments)}catch(t){o("Rollbar internal error:",t)}}}var s=0;e.init=function(r,o){var t=o.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,o=o||{};var i=new e;return l(function(){if(i.configure(o),o.captureUncaught){var e=r.onerror;r.onerror=function(){var r=Array.prototype.slice.call(arguments,0);n(i,e,r)};var l,s,u="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(l=0;l<u.length;++l)s=u[l],r[s]&&r[s].prototype&&a(i,r[s].prototype)}return r[t]=i,i},i.logger)()},e.prototype.loadFull=function(r,o,t,e,n){var i=l(function(){var r=o.createElement("script"),n=o.getElementsByTagName("script")[0];r.src=e.rollbarJsUrl,r.async=!t,r.onload=a,n.parentNode.insertBefore(r,n)},this.logger),a=l(function(){var o;if(void 0===r._rollbarPayloadQueue){var t,e,i,a;for(o=new Error("rollbar.js did not load");t=r._rollbarShimQueue.shift();)for(i=t.args,a=0;a<i.length;++a)if(e=i[a],"function"==typeof e){e(o);break}}"function"==typeof n&&n(o)},this.logger);l(function(){t?i():r.addEventListener?r.addEventListener("load",i,!1):r.attachEvent("onload",i)},this.logger)()},e.prototype.wrap=function(r,o){try{var t;if(t="function"==typeof o?o:function(){return o||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(o){throw o._rollbarContext=t()||{},o._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=o,o}},r._wrapped._isWrap=!0;for(var e in r)r.hasOwnProperty(e)&&(r._wrapped[e]=r[e])}return r._wrapped}catch(n){return r}};for(var u="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError".split(","),p=0;p<u.length;++p)e.prototype[u[p]]=i(u[p]);r.exports={Rollbar:e,_rollbarWindowOnError:n}},function(r,o,t){"use strict";r.exports=function(r,o){return function(t){if(!t&&!window._rollbarInitialized){var e=window.RollbarNotifier,n=o||{},i=n.globalAlias||"Rollbar",a=window.Rollbar.init(n,r);a._processShimQueue(window._rollbarShimQueue||[]),window[i]=a,window._rollbarInitialized=!0,e.processPayloads()}}}}]);
+      </script>-->
+
+<script>(function(h,o,t,j,a,r){
+	h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+	h._hjSettings={hjid:305054,hjsv:5};
+	a=o.getElementsByTagName('head')[0];
+	r=o.createElement('script');r.async=1;
+	r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+	a.appendChild(r);
+})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<div class="body-wrapper">
+  <div class="container">
+    <div id="usa-mortality"></div>
+    <style>.container.viz { width:95%; padding: 0px; }
+.row {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+
+h1 {
+	margin-top: 0;
+	padding: 0;
+}
+
+#loading {
+	/*position: absolute;
+	top: 300px;
+	left: calc(50% - 50px);
+	color: #333;*/
+	font-size: 100px;
+	display: none;
+}
+#mobile {display: none;}
+.viz { display: none; }
+
+.col-md-10 {
+	padding: 0;
+}
+.dc-chart g.row text {fill: black;}
+.dc-chart g.pie-slice text {fill: black;}
+.countries {
+	stroke: #777;
+	stroke-width: 1px;
+}
+
+#data-size .dc-data-count {
+	float: right;
+	margin: 0;
+	margin-top: 8px;
+}
+
+#dragHint {
+	position: absolute;
+	left: 30px;
+	top: 20%;
+	z-index: -10;
+}
+
+#dragHint img {
+	max-height: 50px;
+}
+    </style>
+  </div>
+  <div id="mobile" class="container">
+    <div class="row">
+      <center>
+        <h3>Sorry. This mighty Vis cannot possibly manifest on a mere handheld device!</h3>
+        <h4>Go to a desktop computer, and you'll see something like this :</h4><br/><img src="https://www.infino.me/static/img/screenshots/wonder.png" style="width:100%;"/>
+      </center>
+    </div>
+  </div>
+  <div id="loading" class="container">
+    <div style="height: 300px;" class="row">
+      <center>
+        <h1>Visualization is loading ....</h1><i class="fa fa-cog fa-spin"></i>
+      </center>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <center>
+        <h2>Show your friends!  <a class="share btn btn-sm btn-social btn-facebook"><i class="fa fa-facebook"></i><b>Share Project Infinome</b></a>
+        </h2>
+      </center>
+    </div>
+  </div>
+  <div class="container viz">
+    <div style="min-height:200px;" class="row">
+      <div id="cause-chart" class="col-md-3">
+        <p><strong>Cause of Death </strong>(Click to filter) <a href="javascript:causeChart.filterAll();dc.redrawAll();" style="display: none;" class="reset">reset</a>
+          <div class="clearfix"></div>
+        </p>
+      </div>
+      <div class="col-md-9"><br/><br/>
+        <div class="row">
+          <div id="ageTimeseries" class="col-md-6"></div>
+        </div>
+        <div class="row">
+          <center>
+            <div id="gender-chart" class="col-md-3 col-sm-2 col-xs-6"><br/><strong>Gender</strong>
+            </div>
+          </center>
+          <div class="col-md-1"></div>
+          <div id="age-histogram" class="col-md-8 col-sm-12 col-xs-12">
+            <div id="dragHint"><img src="/static/img/drag.svg"/>
+              <p>Drag to filter age</p>
+            </div>
+            <center>
+              <p><strong>Age of Death </strong>(Drag to filter) 
+              </p><span style="display: none;" class="reset"><a href="javascript:ageHistogram.filterAll();dc.redrawAll();" style="display: none;" class="reset">reset</a></span>
+            </center>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div id="us-chart" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <center><strong>Click on a state to filter</strong>
+            </center>
+          </div>
+          <div id="icd-chapter" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <center>
+              <p><strong>Disease Type</strong>(Click to filter)<a href="javascript:chapterChart.filterAll();dc.redrawAll();" style="display: none;" class="reset">reset</a>
+              </p>
+            </center>
+            <div class="clearfix"></div>
+          </div>
+        </div><br/><br/>
+        <div style="padding:10px;" class="row well">
+          <div class="col-md-8">
+            <p>Click on states, or causes of death to filter the dataset. You can also drag on the bar and line charts to filter by age of death or year. 
+States are colored by the fraction of all deaths <b>for that state.</b>
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p>Data Source: <a target="_BLANK" href="http://wonder.cdc.gov/">CDC Wonder Data (Compressed Mortality)</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br/>
+  <div class="title-block clearfix">
+    <div class="title-seperator"></div>
+  </div><br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col lg-2"><img src="/static/img/logo/guylogo.png" style="height:170px;float:left;margin-left:50px;margin-right:50px;"/>
+      </div>
+      <div style="padding: 20px;" class="col-sm-10 col-md-10 col lg-10 well">
+        <h4><b><font color="#602d91">infino</font><font color="#f15a22">me </font></b>is an open experiment to study human longevity.
+ With the right data, we can all <b>fit better into our genes!</b>
+        </h4>
+        <div class="col-md-2">
+          <center><a href="/join" role="button" style="margin-top:7px;" class="btn btn-info">Learn More</a>
+          </center>
+        </div>
+        <div class="col-sm-5 col-md-5 col lg-5">
+          <center>
+            <div id="ttam" class="addTTAM"></div>
+          </center>
+        </div>
+        <div class="col-sm-5 col-md-5 col lg-5">
+          <h4>Get started with a Fitbit or Jawbone today<style>img.api {width:50px; height:50px; margin-top:0px;}
+//img.withings {width:70px; height:70px; margin-top:0px;}
+a.api {margin-left:15px; float:left;}
+p.api {text-align: center; color: black; margin-bottom: 0px;}
+</style>
+
+<!--a(href='/api/fitbit',data-toggle="tooltip",data-placement="bottom",title="Fitbit").api--><a href="/api/fitbit" target="_BLANK" class="api"><img src="/static/img/branding/fitbit/blk.png" class="api"/>
+  <p class="api">Fitbit</p></a>
+<!--a(href='/api/jawbone',data-toggle="tooltip",data-placement="bottom",title="Jawbone").api--><a href="/api/jawbone" target="_BLANK" class="api"><img src="/static/img/branding/jawbone/up-app-icon.jpg" class="api"/>
+  <p class="api">Jawbone</p></a>
+<!--a(href='/api/withings',data-toggle="tooltip",data-placement="bottom",title="Withings").api--><a href="/api/withings" target="_BLANK" class="api"><img src="/static/img/branding/withings/logo/healthmate.png" class="api withings"/>
+  <p class="api">Withings</p></a>
+<!--a(href='/api/beddit',data-toggle="tooltip",data-placement="bottom",title="Beddit").api--><a href="/api/beddit" target="_BLANK" class="api"><img src="/static/img/branding/beddit/beddit_logo_small.png" style="height: 50px;" class="api"/>
+  <p class="api">Beddit</p></a>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <footer style="box-shadow: 0px 0px 10px rgb(102, 102, 102);">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3 col-md-3">
+              <p>InfinoMe is a project of the </p>
+              <p>Aleph-1 Foundation</p>
+            </div>
+            <div class="col-sm-3 col-md-3"><img src="/static/img/aleph1.png" height="100px" width="100px">
+            </div>
+            <div style="font-size:13px;" class="col-sm-3 col-md-3">
+              <p>We're sick of being sick</p>
+            </div>
+            <div class="col-sm-3 col-md-3">
+              <right><a href="/about">About Us</a>|
+<a href="/privacy">Privacy</a>
+              </right>
+            </div><a href="https://www.infino.me/gene/" style="color:#eee;">.</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- scripts are loaded here--><!-- included at the top of any pages we want the facebook API to initialize-->
+<script>var FACEBOOK_APP_ID = 490077614426376;
+
+</script>
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <!-- JS variables to set on every page-->
+    <script>TTAM_CLIENT_ID = '3f84e0429d9d0537f91cbdfefba3447a';
+TTAM_SCOPE = ['names', 'basic', 'email', 'ancestry', 'genomes', 'haplogroups', 'analyses', 'phenotypes:read:family_tree_url', 'phenotypes:read:date_of_birth', 'phenotypes:read:weight_g', 'phenotypes:read:height_mm', 'phenotypes:read:sex'];
+    </script>
+
+    <script src="/static/js/main.min.js?253b0e84"></script><!--
+    <script src="/static/js/arwa.min.js?16141d0b"></script>-->
+  </body>
+</html>
